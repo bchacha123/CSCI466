@@ -1,0 +1,22 @@
+<?php
+echo "You are inside SelectNum3";
+try
+{
+
+	
+	include("myUserPass.php");
+	include("tables.php");
+
+
+		
+		$dsn = "mysql:host=courses;dbname=z1861700";
+		$pdo = new PDO($dsn, $username, $password);
+
+		$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+}
+	catch(PDOexception $e)
+	{ 
+		echo "Connection to database failed: ". $e->getMessage();
+	}
+
+?>

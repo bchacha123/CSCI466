@@ -1,0 +1,116 @@
+MariaDB [z1861700]> \. assignment05_draft4.sql
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails
+Query OK, 0 rows affected (0.075 sec)
+
+ERROR 1050 (42S01): Table 'dogs' already exists
+Query OK, 5 rows affected (0.075 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| dogid | int(11)      | NO   | PRI | NULL    | auto_increment |
+| breed | varchar(255) | NO   |     | NULL    |                |
+| dname | varchar(255) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.001 sec)
+
++-------+------------+-------+
+| dogid | breed      | dname |
++-------+------------+-------+
+|     1 | Bulldog    | Gus   |
+|     2 | Beagle     | Rex   |
+|     3 | Dachshund  | Rocky |
+|     4 | Poodle     | Lucky |
+|     5 | Dobermann  | Coco  |
+|     6 | Bulldog    | Gus   |
+|     7 | Beagle     | Rex   |
+|     8 | Dachshund  | Rocky |
+|     9 | Poodle     | Lucky |
+|    10 | Dobermann  | Coco  |
++-------+------------+-------+
+10 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.232 sec)
+
+Query OK, 1 row affected (0.025 sec)
+
+Query OK, 1 row affected (0.025 sec)
+
+Query OK, 1 row affected (0.034 sec)
+
+Query OK, 1 row affected (0.033 sec)
+
+Query OK, 1 row affected (0.025 sec)
+
+Query OK, 1 row affected (0.025 sec)
+
+Query OK, 1 row affected (0.034 sec)
+
+Query OK, 1 row affected (0.024 sec)
+
++-----------+---------+------+-----+---------+----------------+
+| Field     | Type    | Null | Key | Default | Extra          |
++-----------+---------+------+-----+---------+----------------+
+| visitid   | int(11) | NO   | PRI | NULL    | auto_increment |
+| dogid     | int(11) | NO   | MUL | NULL    |                |
+| visitdate | date    | NO   |     | NULL    |                |
++-----------+---------+------+-----+---------+----------------+
+3 rows in set (0.001 sec)
+
++---------+-------+------------+
+| visitid | dogid | visitdate  |
++---------+-------+------------+
+|       1 |     1 | 2020-06-20 |
+|       2 |     2 | 2020-03-20 |
+|       3 |     2 | 2018-04-21 |
+|       4 |     2 | 2018-05-12 |
+|       5 |     3 | 2018-07-03 |
+|       6 |     4 | 2018-06-11 |
+|       7 |     5 | 2018-11-20 |
+|       8 |     4 | 2017-06-20 |
++---------+-------+------------+
+8 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.378 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.029 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.025 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.067 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++---------+-------+------------+-----------+
+| visitid | dogid | visitdate  | visittime |
++---------+-------+------------+-----------+
+|       1 |     1 | 2020-06-20 | 01:02:56  |
+|       2 |     2 | 2020-03-20 | 01:02:56  |
+|       3 |     2 | 2018-04-21 | 01:02:56  |
+|       4 |     2 | 2018-05-12 | 01:02:56  |
+|       5 |     3 | 2018-07-03 | 01:02:57  |
+|       6 |     4 | 2018-06-11 | 01:02:57  |
+|       7 |     5 | 2018-11-20 | 01:02:57  |
+|       8 |     4 | 2017-06-20 | 01:02:57  |
++---------+-------+------------+-----------+
+8 rows in set (0.001 sec)
+
+MariaDB [z1861700]> \t

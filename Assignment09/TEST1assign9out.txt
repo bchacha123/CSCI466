@@ -1,0 +1,50 @@
+MariaDB [z1861700]> USE z1861700; CREATE TABLE Fall(pk INT PRIMARY KEY, data CHAR(15)); START TRANSACTION; INSERT INTO Fall VALUES(1, 'dataA'); INSERT INTO Fall VALUES(2, 'dataB'); INSERT INTO Fall VALUES(3, 'dataC');
+Database changed
+Query OK, 0 rows affected (0.281 sec)
+
+Query OK, 0 rows affected (0.000 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.000 sec)
+
+MariaDB [z1861700]> USE z1861700; SELECT * FROM Fall;
+Database changed
+Empty set (0.000 sec)
+
+MariaDB [z1861700]> INSERT INTO Fall VALUES(4, 'dataD'); INSERT INTO Fall VALUES(5, 'dataE');
+Query OK, 1 row affected (0.085 sec)
+
+Query OK, 1 row affected (0.053 sec)
+
+MariaDB [z1861700]> COMMIT;
+Query OK, 0 rows affected (0.086 sec)
+
+MariaDB [z1861700]> SELECT * FROM Fall;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  3 | dataC |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [z1861700]> \t
+MariaDB [z1861700]> SELECT * FROM Fall;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  3 | dataC |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+5 rows in set (0.000 sec)
+
+MariaDB [z1861700]> \t

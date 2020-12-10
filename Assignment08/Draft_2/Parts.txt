@@ -1,0 +1,30 @@
+<?php
+	echo "Is my PHP working?";
+
+	include("myUserPass.php");
+
+	//Including function -> drawtable
+	include("tables.php");
+
+	try
+	{
+		$dsn = "mysql:host=courses;dbname=z1861700";
+		$pdo = new PDO($dsn, $username, $password);
+
+		$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+		//Parts 
+		$rsParts =$pdo->query("SELECT * FROM P;");
+		$rows = $rsParts->fetchAll(PDO::FETCH_ASSOC);
+
+		drawtable($rows);
+
+
+	}//End Try
+
+
+	catch(PDOexception $e)
+	{
+		echo "Connection to Database failed: " . $e->getMessage();
+	}//End Catch	
+?>

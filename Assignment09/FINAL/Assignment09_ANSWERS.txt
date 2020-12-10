@@ -1,0 +1,70 @@
+          Name: Brayan Chacha Gonzalez (z1861700)
+          Date: 10/13/2020
+     Professor: Lehuta
+        Course: CSCI 466 Database
+    Assignment: The purpose of this assignment is to experiment with the 
+		behavior of transactions using a MariaDB database.You will 
+		need to use more than one MariaDB session for these to work. 
+		To do this, just open up two separate putty sessions to turing 
+		or hopper and log into MariaDB on each of them.
+
+
+Question 1.2) What is the result of running the SELECT statement. Why?
+	      Results: Database Changed 
+		       Empty set (0.000 sec) 
+
+	      The reason why I got the result above was because we didn't
+	      use the keyword "end transaction", "COMMIT", or "ROLLBACK." 
+	      This cause the SELECT query to be be set to empty. 
+
+Question 1.5) What is the result of the SELECT statement above?
+	      Result: +----+-------+
+		      | pk | data  |
+		      +----+-------+
+		      |  1 | dataA |
+		      |  2 | dataB |
+		      |  3 | dataC |
+		      |  4 | dataD |
+		      |  5 | dataE |
+		      +----+-------+
+
+
+		Part II -- The Power of ROLLBACK (25pts)
+
+
+Question 2.4) What is the result of the SELECT statement, and why?
+	      Results: Query OK, 1 row affected (0.001 sec)
+
+	      ERROR 1146 (42S02):Table 'z1861700.Spring' doesn't exist
+		
+	      The reason why I got the results above was because "Spring" 
+	      doesn't exist in the database.
+
+Question 2.5) What is the result of the SELECT statement, and why?	
+	      Results: +----+-------+
+		       | pk | data  |
+		       +----+-------+
+		       |  1 | dataA |
+		       |  2 | dataB |
+		       |  3 | dataC |
+		       |  4 | dataD |
+		       |  5 | dataE |
+		       +----+-------+
+	      The query above was created because even though we did an 
+	      insertion and update the database when they keyword "ROLLBACK" 
+	      is used it will roll back the changes and that is exacly what
+	      we got.
+
+		Part III: Be Aware of Deadlock (25pts)
+
+
+Question 3) What happened here?
+            What happen is our database went into a deadlock stage. It seemed like 
+	    it was waiting for user input. This was cause due to having session I 
+	    not being able to complete until session II would complete itself. And
+	    session II would not be able to compelte itself until session I is done. 
+	    That is the reason why our database went into deadlock.  
+
+
+
+	
