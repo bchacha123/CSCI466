@@ -1,0 +1,46 @@
+<html>
+
+    <header>
+        <title>Food/Beverage Insertion</title>
+    </header>
+
+    <body>
+        <h1>Input Food Information</h1>
+        <form action="../groupproject/insertfooddrink.php" method="POST">
+            Name: </label><input type="text" name="name"><br>
+            Type: <input type="radio" name="type" value="Meat">Meat </label>
+            <input type="radio" name="type" value="Vegetable">Vegetable </label>
+            <input type="radio" name="type" value="Fruit">Fruit </label>
+            <input type="radio" name="type" value="Beverage">Beverage </label><br>
+
+            Serving Size<br>
+            <select name="servingunit">
+                <option value="Pounds">Pounds</option>
+                <option value="Grams">Grams</option>
+                <option value="Ounces">Ounces</option>
+                <option value="Cups">Cups</option>
+                <option value="Tablespoons">Tablespoons</option>
+            </select>
+            <input type="number" name="servingsize"><br><br>
+
+            Calories: <input type="number" name = "calories"><br><br>
+
+            Macronutrients (Enter % Daily Value)<br>
+            Protein: <input type="number" name="Protein" ><br>
+            Fats: <input type="number" name="Fats" ><br>
+            Carbohydrates: <input type="number" name="Carbohydrates" ><br><br>
+
+            Vitamins (Enter % Daily Value)<br>
+            Vitamin A: <input type="number" name="vitaminA" ><br>
+            Vitamin C: <input type="number" name="vitaminC" ><br>
+            Vitamin D: <input type="number" name="vitaminD" ><br><br>
+
+            Minerals (Enter % Daily Value)<br>
+            Calcium: <input type="number" name="Calcium" ><br>
+            Magnesium: <input type="number" name="Magnesium" ><br>
+            Potassium: <input type="number" name="Potassium" ><br>
+            Sodium: <input type="number" name="Sodium" ><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
